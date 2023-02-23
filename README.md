@@ -2,4 +2,4 @@
 
 Repositório para aula de PI
 
-:smile:
+:smile: :)

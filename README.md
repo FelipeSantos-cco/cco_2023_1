@@ -1,2 +1,5 @@
-# cco_2023_1
-repositório para aula de PI
+# 1° CCO 2023
+
+Repositório para aula de PI
+
+:smile:

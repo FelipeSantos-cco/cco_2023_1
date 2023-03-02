@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Norma Ligma</title>
+</head>
+<body style="text-align: center;">
+    <h1>Sistema de Calcúlo de média</h1>
+
+    <label>Nome do aluno: </label>
+    <input id="ipt_nome">
+    
+    <br>
+
+    <label>1° Nota: </label>
+    <input id="nota1">
+
+    <br>
+
+    <label>2° Nota: </label>
+    <input id="nota2">
+
+    <br>
+
+    <label>3° Nota: </label>
+    <input id="nota3">
+
+    <br><br>
+
+    <button onclick="calcular()">Analisar desempenho</button>
+
+    <br><br>
+    <div id="div_msg"></div>
+
+</body>
+</html>
+
+<script>
+    function calcular(){
+        div_msg.innerHTML = '';
+
+        var media = (Number(nota1.value) + Number(nota2.value) + Number(nota3.value)) / 3;
+    
+        div_msg.innerHTML = 'Aluno: '+ipt_nome.value+'<br>Sua média foi de '+media;
+
+        if (media > 9.4){
+            div_msg.innerHTML += '<br>Parabéns, você é fora de série!';
+        }
+        ipt_nome.value = '';
+        nota1.value = '';
+        nota2.value = '';
+        nota3.value = '';
+
+    }
+
+
+</script>

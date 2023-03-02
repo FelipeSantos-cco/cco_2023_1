@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Teste | Texto para Fala</title>
+</head>
+<body style="text-align: center;">
+    <label>Digite o texto: </label>
+    <input id="texto">
+    <br>
+    <button onclick="lerTexto()">Ler</button>
+    
+</body>
+</html>
+
+<script>
+function lerTexto() {
+  var texto = document.getElementById("texto").value;
+  var txt_falar = new SpeechSynthesisUtterance(texto);
+  window.speechSynthesis.speak(txt_falar);
+}
+</script>

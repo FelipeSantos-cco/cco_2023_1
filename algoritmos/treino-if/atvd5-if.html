@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo de luz</title>
+
+    <style>
+        .resultado{
+            margin-top: 15px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div>
+
+        <h1>Calculo de consumo de Luz</h1>
+        
+        <label>Quantidade de kW/h consumida no mês: </label>
+        <input placeholder="por exemplo: 10" id="ipt_kwh">
+
+        <br>
+
+        <button onclick="calcular()">Calcular conta de luz</button>
+
+        <div class="resultado" id="resultado"></div>
+        
+    </div>
+        
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var valor = ipt_kwh.value * 0.85;
+        console.log('Valor total: '+ valor);
+        resultado.innerHTML='O valor que irá pagar é de R$ '+valor;
+
+        if(valor <= 100 ){
+            valor = valor - (valor * 0.1);
+            // console.log('Desconto de: '+(valor*0.1))
+            resultado.innerHTML = 'O valor que irá pagar é de R$ '+valor;
+        }
+    }
+
+</script>

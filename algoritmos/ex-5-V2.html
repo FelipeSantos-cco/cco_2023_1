@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 5 | :)</title>
+</head>
+
+<body>
+    <h2 style="text-align: center;">Ingressos FutClub</h2>
+
+    <div style="text-align: center;">
+        <p>Arrecadação por jogo</p>
+
+        <label>Ingressos de estudante vendidos: </label>
+        <input id="ingrEstudante">
+
+        <br><br>
+
+        <label>Ingressos comuns vendidos: </label>
+        <input id="ingrComum">
+
+        <br><br>
+
+        <label>Valor do ingresso comum: </label>
+        <input id="valorIngr">
+
+        <br><br>
+
+        <button onclick="calcular()">Calcular Arrecadação</button>
+
+        <br><br>
+
+        <div id="resultado"></div>
+    </div>
+
+
+
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+        var total = (ingrEstudante.value * (valorIngr.value / 2)) + (ingrComum.value * valorIngr.value);
+        // alert('A arrecadação foi de R$ '+total);
+        resultado.innerHTML += 'No jogo com ' + ingrEstudante.value + ' ingressos de estudantes e ' + ingrComum.value + ' ingressos comuns a arrecadação foi de R$ ' + total + '</br>';
+
+    };
+
+</script>

@@ -35,5 +35,29 @@ VALUES (NULL, 'Ana Silva', '123.123.123-00', 'f', 11000);
 
 -- O comando abaixo dará erro, pois não pode ter cpf repetido
 INSERT INTO funcionario
+VALUES (NULL, 'João Paulo', '123.123.123-00', 'm', 6000);
+
+-- O comando abaixo dará certo
+INSERT INTO funcionario
 VALUES (NULL, 'João Paulo', '901.432.133-12', 'm', 6000);
 
+-- O comando abaixo dará erro, pois o ID tá repetido
+INSERT INTO funcionario
+VALUES (1, 'José Cleberaldo', '912.432.198-54', 'm', 6000);
+
+
+ALTER TABLE funcionario ADD avaliacao DECIMAL(4,2);
+SELECT * FROM funcionario;
+
+ALTER TABLE funcionario ADD CONSTRAINT chkAvaliacao CHECK (avaliacao BETWEEN 0 and 10);
+
+-- Esse comando dará erro, por conta do SAFE MODE 
+UPDATE funcionario SET avaliacao = 10 WHERE nome = 'Ana Silva';
+-- Esse vai dar errado também, a avaliacao só vai até 10
+UPDATE funcionario SET avaliacao = 20 WHERE idFuncionario = 1;
+
+ALTER TABLE funcionario DROP CONSTRAINT chkAvaliacao;
+SELECT * FROM funcionario;
+DESC funcionario;
+
+	

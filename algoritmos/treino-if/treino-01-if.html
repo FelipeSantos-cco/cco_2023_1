@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,19 +8,75 @@
     <title>Aplicativo de Carona</title>
 
     <style>
-        input{
+        body {
+            text-align: center;
+        }
+
+        input {
             margin-bottom: 5px;
         }
+
+        .caixa {
+            margin: auto;
+            width: 80%;
+            display: flex;
+            align-items: center;
+        }
+        
+        #divAdd, #resultado {
+            display: inline-block;
+            width: 50%;
+            height: 100px;
+        }
+
     </style>
 </head>
+
 <body>
     <h1>Aplicativo de Carona</h1>
 
+    <p>Corridas adicionadas: <span id="iCorrida"></span></p>
     <label>Distância da corrida em KM: </label>
-    <input id="ipt_km">
+    <input id="ipt_km" autofocus>
 
-    <label>Volume de chamadas: </label>
+    <br>
 
+    <label>Valor por Km: </label>
+    <input id="ipt_valor">
+
+    <br>
+
+    <button onclick="add()">Adicionar e calcular</button>
+
+    <br><br>
+    <div class="caixa">
+
+        <div id="divAdd"></div>
+        <div id="resultado">
+            <h3>Valor total: R$ <span id="valorTotal"></span></h3>
+        </div>
+
+
+    </div>
 
 </body>
+
 </html>
+
+<script>
+    var valorKm = 0;
+    var i = 0;
+    iCorrida.innerHTML = i;
+    function add() {
+
+        valorKm = valorKm + (ipt_valor.value * ipt_km.value);
+
+        i++;
+
+        divAdd.innerHTML += '<p>Adicionando corrida de ' + ipt_km.value + ' Km no valor de R$ ' + ipt_valor.value * ipt_km.value + '</p>';
+        ipt_km.value = '';
+        iCorrida.innerHTML = i;
+
+        valorTotal.innerHTML = valorKm;
+    }
+</script>

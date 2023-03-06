@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Nome: </label><input id="ipt_nome">
+    <br>
+    <label>Mensagem: </label> <input id="ipt_msg" placeholder="Exemplo: o dia tá muito bonito">
+    <br>
+    <button onclick="ver()">Ver mensagem</button>
+    <br>
+    <div id="ver_msg"></div>
+</body>
+</html>
+
+<script>
+    function ver() {
+        var msg = ipt_msg.value
+        var nome = ipt_nome.value
+
+        ver_msg.innerHTML= `A mensagem que o usuário digitou foi: ${nome}; ${msg}! <br>Se você quiser digite outra se quiser.`
+
+        
+    }
+
+
+
+</script>

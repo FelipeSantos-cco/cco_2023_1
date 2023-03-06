@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2 :)</title>
+</head>
+<body>
+    <label>Latinhas de refigerante que toma por dia: </label> <input id="ipt_refrigerante">
+    <br>
+    <button onclick="calcular()">Quantos refris?</button>
+    <br>
+    <div id="resp"></div>
+
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var refris = ipt_refrigerante.value * 365;
+        
+        resp.innerHTML = `Latinhas consumidas por ano: ${refris}`
+
+        if(refris >= 500){
+            resp.innerHTML += `<br>Cuidado com a diabetes!`
+        }
+    }
+
+</script>
